@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import '~normolise.css';
+@import '~normalize.css';
 
-@import "header";
-@import "toolbar";
-@import "formula";
-@import "table";
+@import 'header';
+@import 'toolbar';
+@import 'formula';
+@import 'table';
 
 * {
     margin: 0;

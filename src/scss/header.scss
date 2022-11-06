@@ -2,5 +2,24 @@
 @import 'mixins';
 
 .excel__header{
-    
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: $header-height;
+  padding: 8px 4px 0px;
+  display: flex;
+  justify-content: space-between;
+  
+  //temp
+  background: antiquewhite;
+
+  .input {
+
+  }
+
+  .button{
+
+  }
+
 }
