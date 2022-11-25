@@ -63,7 +63,7 @@ module.exports = (env, argv) => {
       open: true,
       compress: true,
       hot: true,
-      // watchFiles: './',
+      watchFiles: './',
     },
     devtool: isDev ? 'source-map' : false,
     plugins: plugin(),
