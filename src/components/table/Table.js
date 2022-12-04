@@ -28,6 +28,7 @@ export class Table extends ExcelComponent {
       <div class="cell">A</div>
       <div class="cell">B</div>
       <div class="cell">C</div>      
+      <div class="cell">D</div>      
     </div>
   </div>
   `

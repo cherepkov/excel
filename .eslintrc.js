@@ -16,6 +16,7 @@ module.exports = {
     'linebreak-style': 'off',
     'comma-dangle': 'off',
     'max-len': 'off',
-    'require-jsdoc': 'off'
+    'require-jsdoc': 'off',
+    'operator-linebreak': 'off'
   }
 }
