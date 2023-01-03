@@ -16,6 +16,7 @@
     }
 
     .row-info {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -30,6 +31,7 @@
         display: flex;
     }
     .colomn{
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -55,8 +57,59 @@
 
         &.selected {
             border: none;
-            outline: 2px solid #3c74ff;
+            outline: 2px solid $primary-color;
             z-index: 2;
         }
+    }
+
+    .col-resize, .row-resize {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        background: $primary-color;
+
+        &:hover{
+            opacity: 1;
+        }
+
+        .line {
+            position: absolute;
+            opacity: 0.5;
+            background: $primary-color;
+
+        }
+    }
+
+    .col-resize {
+        top: 0;
+        width: 4px;
+       
+        &:hover{
+            cursor: col-resize;
+        }
+
+        .line{
+            width: 2px;
+            height: 100vh;
+            right: 1px;
+            top: $row-height;
+        }
+    }
+
+    .row-resize {
+        left: 0;
+        height: 4px;
+        
+        &:hover{
+            cursor: row-resize;
+        }
+        .line{
+            width: 100vw;
+            height: 2px;
+            left: $info-cell-width;
+            top: 1px;
+        }
+
     }
 }
