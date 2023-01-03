@@ -22,8 +22,7 @@ export class Table extends ExcelComponent {
   }
 
   onMousedown(e) {
-    console.log(e.target.getAttribute('data-resize'))
-    console.log(e.target.parentNode.parentNode);
+    // console.log(e.target.getAttribute('data-resize'))
 
     if (e.target.dataset.resize) {
       // console.log('start resize', e.target.dataset.resize)
