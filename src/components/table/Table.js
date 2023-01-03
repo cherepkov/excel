@@ -14,7 +14,7 @@ export class Table extends ExcelComponent {
   }
 
   toHTML() {
-    return createTable(20);
+    return createTable(200);
   }
 
   onClick() {
@@ -46,7 +46,7 @@ export class Table extends ExcelComponent {
       if (e.target.dataset.resize=='row') {
         const delta2=$resizer.getCoords().height;
         document.onmousemove=event=>{
-          const delta = event.pageY-coords.bottom
+          const delta = event.pageY-coords.bottom - window.scrollY
           const value = coords.height+delta+delta2
           $parent.$el.style.height=value + 'px';
         }
@@ -56,6 +56,7 @@ export class Table extends ExcelComponent {
         $resizer.clear();
         document.onmousemove = null;
         document.onmouseup = null;
+        window.getSelection()?.removeAllRanges();
       }
     }
   }
