@@ -1,9 +1,6 @@
-/* eslint-disable arrow-parens */
-
 import {$} from '@core/dom';
 
 export function resizeHandler($root, event) {
-  // console.log('start resize', e.target.dataset.resize)
   const $resizer=$(event.target)
   const $parent=$resizer.closest('[data-type="resizable"]')
   const coords=$parent.getCoords()
@@ -17,14 +14,12 @@ export function resizeHandler($root, event) {
   let value;
 
   if (type =='col') {
-    // const delta2=$resizer.getCoords().width;
     document.onmousemove=(e)=>{
       const delta = e.pageX-coords.right
       value = coords.width+delta
       $resizer.css({
         right: -delta+'px',
       })
-      //
     }
   }
 
@@ -45,12 +40,11 @@ export function resizeHandler($root, event) {
 
     if (type=='col') {
       $root.findAll(`[data-col-index="${$parent.data.colIndex}"]`)
-          .forEach(el => el.style.width=value + 'px')
+          .forEach((el) => el.style.width=value + 'px')
     }
     if (type=='row') {
       $parent.css({'height': value + 'px'});
     }
-    // window.getSelection()?.removeAllRanges();
     $resizer.css({
       opacity: 0,
       bottom: 0,

@@ -4,6 +4,7 @@ import {$} from '@core/dom';
 import {ExcelComponent} from '@core/ExcelComponent';
 import {createTable} from '@/components/table/tableTemplate';
 import {resizeHandler} from './table.resize';
+import {shouldResize} from './tablefunctions';
 
 
 export class Table extends ExcelComponent {
@@ -24,9 +25,7 @@ export class Table extends ExcelComponent {
   }
 
   onMousedown(event) {
-    // console.log(e.target.getAttribute('data-resize'))
-
-    if (e.target.dataset.resize) {
+    if (shouldResize(event)) {
       resizeHandler(this.$root, event)
     }
   }
@@ -36,7 +35,6 @@ export class Table extends ExcelComponent {
   }
 
   onMousemove(e) {
-    // console.log('mousemove')
     if (this.resize) {
       console.log(e, this.resize_offset, this.resize.getBoundingClientRect().width)
       this.resize.style.width = `${this.resize.getBoundingClientRect().width + e.pageX-this.resize_offset}px`
