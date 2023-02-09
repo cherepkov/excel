@@ -17,6 +17,7 @@ module.exports = {
     'comma-dangle': 'off',
     'max-len': 'off',
     'require-jsdoc': 'off',
-    'operator-linebreak': 'off'
+    'operator-linebreak': 'off',
+    'eslint-disable arrow-parens': 'off'
   }
 }
