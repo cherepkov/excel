@@ -23,11 +23,11 @@ export class Table extends ExcelComponent {
     console.log('click')
   }
 
-  onMousedown(e) {
+  onMousedown(event) {
     // console.log(e.target.getAttribute('data-resize'))
 
     if (e.target.dataset.resize) {
-      resizeHandler(this.$root, e)
+      resizeHandler(this.$root, event)
     }
   }
   onMouseup() {
