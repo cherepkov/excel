@@ -8,7 +8,7 @@ export class TableSelection {
     this.clear()
     this.group.push($el);
     this.current=$el;
-    $el.addClass(TableSelection.className);
+    $el.focus().addClass(TableSelection.className);
   }
   selectGroup($group=[]) {
     this.clear();

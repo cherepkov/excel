@@ -36,6 +36,11 @@ class Dom {
     return this.data.id
   }
 
+  focus() {
+    this.$el.focus()
+    return this
+  }
+
   append(node) {
     if (node instanceof Dom) {
       node=node.$el
