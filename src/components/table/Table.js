@@ -11,9 +11,11 @@ import {TableSelection} from './TableSelection'
 export class Table extends ExcelComponent {
   static className='excel__table';
 
-  constructor($root) {
+  constructor($root, options) {
     super($root, {
-      listeners: ['mousedown', 'keydown']
+      name: 'Table',
+      listeners: ['mousedown', 'keydown'],
+      ...options
     })
   }
 
