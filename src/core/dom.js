@@ -79,6 +79,7 @@ class Dom {
 
   find(selector) {
     return $(this.$el.querySelector(selector));
+    return this;
   }
 
   findAll(selector) {
@@ -91,11 +92,13 @@ class Dom {
         .forEach((key) => this.$el.style[key] = styles[key]);
   }
   addClass(className) {
-    this.$el.classList.add(className)
+    this.$el.classList.add(className);
+    return this
   }
 
   removeClass(className) {
     this.$el.classList.remove(className)
+    return this
   }
 }
 

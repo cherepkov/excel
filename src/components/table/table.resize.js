@@ -37,7 +37,6 @@ export function resizeHandler($root, event) {
   document.onmouseup=()=>{
     document.onmousemove = null;
     document.onmouseup = null;
-
     if (type=='col') {
       $root.findAll(`[data-col-index="${$parent.data.colIndex}"]`)
           .forEach((el) => el.style.width=value + 'px')

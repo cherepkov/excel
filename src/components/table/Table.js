@@ -29,9 +29,7 @@ export class Table extends ExcelComponent {
   init() {
     super.init()
 
-    const $cell=this.$root.find('[data-id="0:0"]')
-    this.selection.select($cell);
-    this.$emit('table:select', $cell);
+    this.selectCell(this.$root.find('[data-id="0:0"]'))
 
     this.$on('formula:input', text=>{
       this.selection.current.text(text)
@@ -43,6 +41,11 @@ export class Table extends ExcelComponent {
 
   onClick() {
     console.log('click')
+  }
+
+  selectCell($cell) {
+    this.selection.select($cell);
+    this.$emit('table:select', $cell);
   }
 
   onMousedown(event) {
@@ -57,6 +60,7 @@ export class Table extends ExcelComponent {
       } else {
         this.selection.select($target)
       }
+      this.$emit('table:select', $target);
     }
   }
   onMouseup() {
@@ -77,9 +81,8 @@ export class Table extends ExcelComponent {
     if (keys.includes(key) && !event.shiftKey) {
       event.preventDefault();
       const id = this.selection.current.id(true);
-      const $next = this.$root.find(nextSelector(key, id))
-      this.selection.select($next);
-      this.$emit('table:select', $next)
+      const $next = this.$root.find(nextSelector(key, id));
+      this.selectCell($next);
     }
   }
 
