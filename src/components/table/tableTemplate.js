@@ -29,9 +29,9 @@ function toCell(row) {
 
 function toColumn(content, index) {
   return `
-  <div class="colomn" data-type='resizable' data-col-index=${index+1}>
+  <div class="colomn" data-type='resizable' data-col-index=${index}>
     ${content}
-    <div class='col-resize' data-resize='col' ></div>
+    <div class='col-resize' data-resize='col'></div>
   </div>
   `
 }
